@@ -9,7 +9,7 @@ class Docker {
     }
 
     def buildImage(){
-        this.script.sh "docker build -t alisalmi/jenkins_repo:${script.Version} ."
+        this.script.sh "docker build -t alisalmi/jenkins_repo:${script.BUILD_NUMBER} ."
     }
 
     def loginDockerhub(){
@@ -19,6 +19,6 @@ class Docker {
     }
 
     def pushDockerhub(){
-        script.sh "docker push alisalmi/jenkins_repo:${script.Version}"
+        script.sh "docker push alisalmi/jenkins_repo:${script.BUILD_NUMBER}"
     }
 }
