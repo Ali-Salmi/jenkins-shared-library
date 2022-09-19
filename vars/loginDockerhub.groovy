@@ -1,5 +1,5 @@
-
 #!/usr/bin/env groovy
+
 import classes.Docker
 
 def call(){
