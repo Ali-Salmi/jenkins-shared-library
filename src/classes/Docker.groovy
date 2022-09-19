@@ -9,7 +9,7 @@ class Docker {
     }
 
     def buildImage(){
-        this.script.sh "docker build -t alisalmi/jenkins_repo:5.0 ."
+        this.script.sh "docker build -t alisalmi/jenkins_repo:${script.Version} ."
     }
 
     def loginDockerhub(){
@@ -19,6 +19,6 @@ class Docker {
     }
 
     def pushDockerhub(){
-        script.sh "docker push alisalmi/jenkins_repo:5.0"
+        script.sh "docker push alisalmi/jenkins_repo:${script.Version}"
     }
 }
