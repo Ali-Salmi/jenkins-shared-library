@@ -9,7 +9,7 @@ class Docker {
     }
 
     buildImage(){
-        script. sh "docker build -t alisalmi/jenkins_repo:${script.Version} ."
+        script.sh "docker build -t alisalmi/jenkins_repo:${script.Version} ."
     }
 
     loginDockerhub(){
