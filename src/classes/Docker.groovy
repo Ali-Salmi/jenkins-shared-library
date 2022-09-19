@@ -9,12 +9,12 @@ class Docker {
     }
 
     buildImage(){
-        script.sh "docker build -t alisalmi/jenkins_repo:5.0 ."
+        this.script.sh "docker build -t alisalmi/jenkins_repo:5.0 ."
     }
 
     loginDockerhub(){
-        script.withCredentials([script.usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'USER', passwordVariable:'PASS')]){
-            script.sh "echo $script.PASS | docker login -u $script.USER --password-stdin"
+        this.script.withCredentials([this.script.usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'USER', passwordVariable:'PASS')]){
+            this.script.sh "echo $script.PASS | docker login -u $script.USER --password-stdin"
         }
     }
 
